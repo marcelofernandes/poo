@@ -43,16 +43,19 @@ public class Agenda implements AgendaIF{
 		for(Contato c: this.contatos){
 			if(c.getNome().equals(nome)){
 				c.setTelefone(tel);
+				gravaContatos();
 				return;
 			}
 		}
 		this.contatos.add( new Contato(nome,tel) );
+		gravaContatos();
 		System.out.println("Contato "  + nome + " adicionado.");
 	}
 	public void removerContato(String nomeContato)throws ContatoInexistenteException{
 		for(Contato c: this.contatos){
 			if( c.getNome().equals(nomeContato) ){
 				this.contatos.remove(c);
+				gravaContatos();
 				return;
 			}
 		}
