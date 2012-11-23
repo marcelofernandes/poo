@@ -19,7 +19,7 @@ public class Agenda implements AgendaIF{
 		carregaContatos();
 	}
 
-	public void gravaContatos(){
+	private void gravaContatos(){
 		try{
 			gravador.gravaContato(contatos);
 		}
@@ -29,7 +29,7 @@ public class Agenda implements AgendaIF{
 		
 		
 	}
-	public void carregaContatos(){
+	private void carregaContatos(){
 		try{
 			contatos = gravador.leContato();
 		}
