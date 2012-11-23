@@ -37,7 +37,6 @@ public class ProgramaPrincipal{
 			}
 			op = Integer.parseInt(JOptionPane.showInputDialog("Digite 1- adicionar, 2- remover, 3-consultar, 4-sair:"));
 		}while(op<3);
-		agenda.gravaContatos();
 	}
 }
 
