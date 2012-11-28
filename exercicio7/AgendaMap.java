@@ -19,7 +19,7 @@ public class AgendaMap implements AgendaIF{
 		carregaContatos();
 	}
 
-	public void gravaContatos(){
+	private void gravaContatos(){
 		try{
 			gravador.gravaContatos(contatos);
 		}
@@ -29,7 +29,7 @@ public class AgendaMap implements AgendaIF{
 		
 		
 	}
-	public void carregaContatos(){
+	private void carregaContatos(){
 		try{
 			contatos = gravador.leContato();
 		}
@@ -42,6 +42,7 @@ public class AgendaMap implements AgendaIF{
 	public void adicionarContato(String nome, String tel){
 		this.contatos.put(nome, new Contato(nome,tel) );
 		System.out.println("Contato "  + nome + " adicionado.");
+		gravaContatos();
 	}
 
 	public void removerContato(String nomeContato)throws ContatoInexistenteException{
@@ -49,6 +50,7 @@ public class AgendaMap implements AgendaIF{
 			throw new ContatoInexistenteException("Contato " + nomeContato + " nao encontrado.");
 		}
 		this.contatos.remove(nomeContato);
+		gravaContatos();
 	}
 
 	public Contato pesquisarContato(String nomeContato)throws ContatoInexistenteException{

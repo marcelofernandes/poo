@@ -37,6 +37,4 @@ public interface AgendaIF{
 	 * @throws ContatoInexistenteException Exceção caso o contato não exista.
 	 */
 	public Contato pesquisarContato(String nomeContato)throws ContatoInexistenteException;
-	public void gravaContatos();
-	public void carregaContatos();
 }	

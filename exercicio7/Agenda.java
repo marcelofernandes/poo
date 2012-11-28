@@ -19,7 +19,7 @@ public class Agenda implements AgendaIF{
 		carregaContatos();
 	}
 
-	public void gravaContatos(){
+	private void gravaContatos(){
 		try{
 			gravador.gravaContato(contatos);
 		}
@@ -29,7 +29,7 @@ public class Agenda implements AgendaIF{
 		
 		
 	}
-	public void carregaContatos(){
+	private void carregaContatos(){
 		try{
 			contatos = gravador.leContato();
 		}
@@ -43,16 +43,20 @@ public class Agenda implements AgendaIF{
 		for(Contato c: this.contatos){
 			if(c.getNome().equals(nome)){
 				c.setTelefone(tel);
+				gravaContatos();
 				return;
 			}
 		}
 		this.contatos.add( new Contato(nome,tel) );
+		gravaContatos();
 		System.out.println("Contato "  + nome + " adicionado.");
 	}
 	public void removerContato(String nomeContato)throws ContatoInexistenteException{
 		for(Contato c: this.contatos){
 			if( c.getNome().equals(nomeContato) ){
 				this.contatos.remove(c);
+				System.out.println("Contato "  + nomeContato + " removido.");
+				gravaContatos();
 				return;
 			}
 		}
