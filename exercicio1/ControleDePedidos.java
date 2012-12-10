@@ -29,15 +29,11 @@ public class ControleDePedidos implements InterfaceSistemaDeControle{
 			this.pedidos = new ArrayList<Pedido>();
 			System.out.println("Os dados nao puderam ser movidos");
 		}
-		catch(ClassNotFoundException e){
-			this.pedidos = new ArrayList<Pedido>();
-			System.out.println("Os dados nao puderam ser movidos");
-		}
 	}
 	public int calculaQuantidadeDePedidosDoCliente(String nomeCliente){
 		int qtd = 0;
 		for(Pedido p: this.pedidos){
-			if(p.getCliente().getNome() == nomeCliente){
+			if(p.getCliente().getNome().equals(nomeCliente)){
 				qtd++;
 			}
 		}
@@ -49,8 +45,7 @@ public class ControleDePedidos implements InterfaceSistemaDeControle{
 	public List<Pedido> pesquisaPedidosIncuindoProduto(long codProduto){
 		List<Pedido> aux = new ArrayList<Pedido>();
 		for(Pedido p: this.pedidos){
-			List<ItemDePedido> itens = p.getItens();
-			for(ItemDePedido item:itens){
+			for(ItemDePedido item: p.getItens()){
 				if(item.getCodProduto() == codProduto){
 					aux.add(p);
 					break;
@@ -63,7 +58,7 @@ public class ControleDePedidos implements InterfaceSistemaDeControle{
 		for(Pedido p: this.pedidos){
 			if(p.getNumeroDoPedido() == numPedido){
 				this.pedidos.remove(p);
-				break;
+				return;
 			}
 		}
 	}
