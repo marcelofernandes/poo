@@ -1,29 +1,40 @@
 import java.util.*;
-import java.io.FileInputStream;
-import java.io.FileOutputStream;
-import java.io.IOException;
-import java.io.ObjectInputStream;
-import java.io.ObjectOutputStream;
+import java.io.*;
 
 public class GravadorDePedidos{
 
 	public GravadorDePedidos(){
 	}
-	public List<Pedido> lePedido() throws IOException,ClassNotFoundException{
-		List<Pedido> lista = new ArrayList<Pedido>();
-		FileInputStream arquivoLeitura = new FileInputStream("C:/arquivo.dat");
-		ObjectInputStream in = new ObjectInputStream(arquivoLeitura);
-		lista = (ArrayList<Pedido>)in.readObject();
-		arquivoLeitura.close();
-		in.close();
-		return lista;
+	public List<Pedido> lePedido() throws IOException{
+		ObjectInputStream in = null;
+		try{
+			in = new ObjectInputStream(new fileInputStream("pedidos.txt"));
+			return (ArrayList<Pedido>)in.readObject();
+		}catch(FileNotFoundException e){
+			throw new IOException("Arquuivo não encontrado", e);
+		}catch(ClassNotFoundException e){
+			throw new IOException("Classe não encontrada", e);
+		}catch(IOException e){
+			throw e;
+		}
+		finally{
+			if(in != null){
+				in.close();
+			}
+		}
 		
 	}
 	public void gravaPedido(List <Pedido> pedidos)throws IOException{
-		FileOutputStream arquivoGravar = new FileOutputStream("C:/arquivo.dat");
-		ObjectOutputStream out = new ObjectOutputStream(arquivoGravar);
-		out.writeObject(pedidos);
-		arquivoGravar.close();
-		out.close();
+		ObjectOutputStream out = null;
+		try{
+			out = new ObjectOutputStream(new FileOutputStream("pedidos.txt"));
+			out.writeObject(pedidos);
+		}catch(FileNotFoundException e){
+			throw new IOException("Arquivo não encontrado",e);
+		}finally{
+			if(out != null){
+				out.close();
+			}
+		}
 	}
 }
