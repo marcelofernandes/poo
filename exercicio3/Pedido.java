@@ -42,8 +42,8 @@ public class Pedido {
 	public double getValorTotal(){
 		double total = 0;
 		for (int i=0; i< this.itens.size(); i++){
-			ItemDePedido it = this.itens.get(i);
-			total+=it.getSubTotal();
+			ItemDePedido item = this.itens.get(i);
+			total+=item.getSubTotal();
 		}
 		return total;
 	}	
