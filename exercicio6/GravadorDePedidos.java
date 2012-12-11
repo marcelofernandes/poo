@@ -15,7 +15,7 @@ public class GravadorDePedidos{
 		}catch(FileNotFoundException e){
 			throw new IOException("Arquivo nao encontrado", e);
 		}catch(ClassNotFoundException e){
-			throw new IOException("Classe n�a encontrada.", e);
+			throw new IOException("Classe nao encontrada.", e);
 		}catch(IOException e){
 			throw e;
 		}finally{
