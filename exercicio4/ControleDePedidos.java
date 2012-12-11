@@ -15,7 +15,7 @@ public class ControleDePedidos implements InterfaceSistemaDeControle {
 	private List <Pedido> pedidos;
 	
 	/**
-	 * Construtor padrão que inicializa o ArrayList.
+	 * Construtor padrï¿½o que inicializa o ArrayList.
 	 * 
 	 */
 	public ControleDePedidos(){
@@ -28,10 +28,9 @@ public class ControleDePedidos implements InterfaceSistemaDeControle {
 	 * @param NomeCliente Nome do cliente que 
 	 * queremos calcular a quantidade de pedidos
 	 * 
-	 * @return Retorna a quantidade de pedidos do cliente passado como parâmetro.
+	 * @return Retorna a quantidade de pedidos do cliente passado como parï¿½metro.
 	 */
 	public int calculaQuantidadeDePedidosDoCliente(String nomeCliente){
-		
 		int cont = 0;
 		for (Pedido p: this.pedidos){
 			if (p.getCliente().getNome().equals(nomeCliente)){
@@ -49,8 +48,7 @@ public class ControleDePedidos implements InterfaceSistemaDeControle {
 	public List<Pedido> pesquisaPedidosIncluindoProduto(String codProduto) {
 		List <Pedido> pedidosProcurados = new LinkedList<Pedido>();
 		for (Pedido p: this.pedidos){
-			List<ItemDePedido> itens = p.getItens();
-			for (ItemDePedido it: itens){
+			for (ItemDePedido it: p.getItens()){
 				if (it.getCodProduto().equals(codProduto)){
 					pedidosProcurados.add(p);
 					break;
@@ -62,9 +60,9 @@ public class ControleDePedidos implements InterfaceSistemaDeControle {
 
 	public void removePedido(long numeroPedido) {
 		for (Pedido p: this.pedidos){
-			if (p.getNumeroPedido()== numeroPedido){
+			if (p.getNumeroPedido() == numeroPedido){
 				this.pedidos.remove(p);
-				break;
+				return;
 			}
 		}
 
