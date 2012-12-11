@@ -1,6 +1,4 @@
-import java.util.ArrayList;
-import java.util.LinkedList;
-import java.util.List;
+import java.util.*;
 
 
 public class ControleDePedidos implements InterfaceSistemaDeControle {
@@ -12,7 +10,6 @@ public class ControleDePedidos implements InterfaceSistemaDeControle {
 	}
 	
 	public int calculaQuantidadeDePedidosDoCliente(String nomeCliente){
-		
 		int cont = 0;
 		for (Pedido p: this.pedidos){
 			if (p.getCliente().getNome().equals(nomeCliente)){
@@ -32,14 +29,13 @@ public class ControleDePedidos implements InterfaceSistemaDeControle {
 	public List<Pedido> pesquisaPedidosIncluindoProduto(String codProduto) {
 		List <Pedido> pedidosProcurados = new LinkedList<Pedido>();
 		for (Pedido p: this.pedidos){
-			List<ItemDePedido> itens = p.getItens();
-			for (ItemDePedido it: itens){
-				if (it.getCodProduto().equals(codProduto)){
+			for (ItemDePedido item : p.getItens()){
+				if (item.getCodProduto().equals(codProduto)){
 					pedidosProcurados.add(p);
+					break;
 				}
 			}
 		}
-		//TODO: ajeitar para verificar itens repetidos
 		return pedidosProcurados;
 	}
 
@@ -48,7 +44,7 @@ public class ControleDePedidos implements InterfaceSistemaDeControle {
 		for (Pedido p: this.pedidos){
 			if (p.getNumeroPedido()== numeroPedido){
 				this.pedidos.remove(p);
-				break;
+				return;
 			}
 		}
 
