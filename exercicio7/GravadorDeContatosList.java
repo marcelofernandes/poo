@@ -1,11 +1,7 @@
 package br.ufpb.sistemadeagenda;
 
 import java.util.*;
-import java.io.FileInputStream;
-import java.io.FileOutputStream;
 import java.io.*;
-import java.io.ObjectInputStream;
-import java.io.ObjectOutputStream;
 
 public class GravadorDeContatosList{
 
