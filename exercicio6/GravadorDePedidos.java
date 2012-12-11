@@ -1,11 +1,7 @@
 package br.ufpb.sistemadepedidos;
 
 import java.util.*;
-import java.io.FileInputStream;
-import java.io.FileOutputStream;
 import java.io.*;
-import java.io.ObjectInputStream;
-import java.io.ObjectOutputStream;
 
 public class GravadorDePedidos{
 
@@ -19,7 +15,7 @@ public class GravadorDePedidos{
 		}catch(FileNotFoundException e){
 			throw new IOException("Arquivo nao encontrado", e);
 		}catch(ClassNotFoundException e){
-			throw new IOException("Classe não encontrada.", e);
+			throw new IOException("Classe nï¿½a encontrada.", e);
 		}catch(IOException e){
 			throw e;
 		}finally{
