@@ -55,10 +55,7 @@ public class Agenda implements AgendaIF{
 		for(Contato c: this.contatos){
 			if( c.getNome().equals(nomeContato) ){
 				this.contatos.remove(c);
-<<<<<<< HEAD
 				System.out.println("Contato "  + nomeContato + " removido.");
-=======
->>>>>>> bbbabfb462ee1a81a914d8303427b539657b391f
 				gravaContatos();
 				return;
 			}
