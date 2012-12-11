@@ -5,7 +5,7 @@ public class Cliente {
 	private String nome;
 	
 	public Cliente(){
-		this.nome = "Fulano";
+		this("Fulano");
 	}
 	public Cliente(String nome){
 		this.nome = nome;
