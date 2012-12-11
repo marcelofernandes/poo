@@ -15,7 +15,7 @@ public class ControleDePedidos implements InterfaceSistemaDeControle{
 	private GravadorDePedidos gravador;
 
 	/**
-	 * Construtor padrão que inicializa a lista.
+	 * Construtor padrï¿½o que inicializa a lista.
 	 * 
 	 */
 	public ControleDePedidos(){
@@ -54,7 +54,7 @@ public class ControleDePedidos implements InterfaceSistemaDeControle{
 	 * @param NomeCliente Nome do cliente que 
 	 * queremos calcular a quantidade de pedidos
 	 * 
-	 * @return Retorna a quantidade de pedidos do cliente passado como parâmetro.
+	 * @return Retorna a quantidade de pedidos do cliente passado como parï¿½metro.
 	 */
 	public int calculaQuantidadeDePedidosDoCliente(String nomeCliente){
 		int qtd = 0;
@@ -71,8 +71,7 @@ public class ControleDePedidos implements InterfaceSistemaDeControle{
 	public List<Pedido> pesquisaPedidosIncuindoProduto(long codProduto){
 		List<Pedido> aux = new ArrayList<Pedido>();
 		for(Pedido p: this.pedidos){
-			List<ItemDePedido> itens = p.getItens();
-			for(ItemDePedido item:itens){
+			for(ItemDePedido item : p.getItens()){
 				if(item.getCodProduto() == codProduto){
 					aux.add(p);
 					break;
@@ -85,7 +84,7 @@ public class ControleDePedidos implements InterfaceSistemaDeControle{
 		for(Pedido p: this.pedidos){
 			if(p.getNumeroDoPedido() == numPedido){
 				this.pedidos.remove(p);
-				break;
+				return;
 			}
 		}
 	}
