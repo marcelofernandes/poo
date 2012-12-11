@@ -68,9 +68,9 @@ public class AgendaMap implements AgendaIF{
 	}
 
 	public Iterator<Contato> getContatosOrdenados(){
-		Collection<Contato> c = new ArrayList<Contato>();
+		List<Contato> c = new ArrayList<Contato>();
 		c.addAll(contatos.values());
-		Collections.sort((List<Contato>) c);
+		Collections.sort(c);
 		return c.iterator();
 	}
 }
