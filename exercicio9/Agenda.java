@@ -77,7 +77,9 @@ public class Agenda implements AgendaIF{
 	}
 
 	public Iterator<Contato> getContatosOrdenados(){
-		Collections.sort(contatos);
-		return this.contatos.iterator();
+		List<Contato> lista = new ArrayList<Contato>();
+		lista.addAll(this.contatos);
+		Collections.sort(lista);
+		return lista.iterator();
 	}
 }
