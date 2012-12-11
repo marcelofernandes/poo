@@ -8,71 +8,41 @@ public class AgendaTest{
 	Agenda agenda;
 
 	@Before
-	
 	public void setUp() {
 		
 		agenda = new Agenda();
 	
 	}
 
-
-
 	@Test
 	public void testaAgenda(){	
-		agenda.adicionarContato("José", "333");
+		agenda.adicionarContato("Josï¿½", "333");
 	
 		try {
-			
-			Contato c = agenda.pesquisarContato("José");
-
-			assertTrue( c.getNome().equals("José"));
-
+			Contato c = agenda.pesquisarContato("Josï¿½");
+			assertTrue( c.getNome().equals("Josï¿½"));
 			assertEquals("333", c.getTelefone());
-
 		} catch (ContatoInexistenteException e) {
-	
-			fail("Não deveria lançar exceção pois José está cadastrado");
-
+			fail("Nï¿½o deveria lanï¿½ar exceï¿½ï¿½o pois Josï¿½ estï¿½ cadastrado");
 		}
-		
-			
 		try {
-			
-			agenda.removerContato("José");
-
+			agenda.removerContato("Josï¿½");
 		} catch (ContatoInexistenteException e) {
-
-			fail("Não deveria lançar exceção pois existe o contato José");
-
+			fail("Nï¿½o deveria lanï¿½ar exceï¿½ï¿½o pois existe o contato Josï¿½");
 		}
-		
-			
-		try {
-			
-			agenda.pesquisarContato("José");
-
-			fail("Programa com erro pois deveria ter lançado a exceção");
-		
+		try {	
+			agenda.pesquisarContato("Josï¿½");
+			fail("Programa com erro pois deveria ter lanï¿½ado a exceï¿½ï¿½o");
 		} catch (ContatoInexistenteException e) {
-
 			//ok
 		}
-	
-		agenda.adicionarContato("José","888");
-	
+		agenda.adicionarContato("Josï¿½","888");
 		try {
-			
-			Contato c2 = agenda.pesquisarContato("José");
-
-			assertTrue(c2.getNome().equals("José"));
-
+			Contato c2 = agenda.pesquisarContato("Josï¿½");
+			assertTrue(c2.getNome().equals("Josï¿½"));
 			assertEquals("888", c2.getTelefone());
-
 		} catch (ContatoInexistenteException e) {
-
-			fail("Não deveria lançar exceção pois José está cadastrado");
-
+			fail("Nï¿½o deveria lanï¿½ar exceï¿½ï¿½o pois Josï¿½ estï¿½ cadastrado");
 		}
-
 	}
 }
