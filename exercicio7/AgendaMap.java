@@ -50,10 +50,7 @@ public class AgendaMap implements AgendaIF{
 			throw new ContatoInexistenteException("Contato " + nomeContato + " nao encontrado.");
 		}
 		this.contatos.remove(nomeContato);
-<<<<<<< HEAD
-=======
 		System.out.println("Contato "  + nomeContato + " removido.");
->>>>>>> bbbabfb462ee1a81a914d8303427b539657b391f
 		gravaContatos();
 	}
 
