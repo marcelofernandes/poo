@@ -3,7 +3,7 @@ import java.util.List;
 /**
  * Interface par controle de pedidos.
  * 
- * @autor Marcelo Fernandes
+ * @author Marcelo Fernandes
  * 
  */
 public interface InterfaceSistemaDeControle{
