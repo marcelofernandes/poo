@@ -15,7 +15,7 @@ public class ControleDePedidos implements InterfaceSistemaDeControle {
 	private List <Pedido> pedidos;
 	
 	/**
-	 * Construtor padr�o que inicializa o ArrayList.
+	 * Construtor padrão que inicializa o ArrayList.
 	 * 
 	 */
 	public ControleDePedidos(){
@@ -40,11 +40,25 @@ public class ControleDePedidos implements InterfaceSistemaDeControle {
 		return cont;
 	}
 	
+	/**
+	 * Método para adicionar um pedido.
+	 * 
+	 * param p O pedido a ser adicionado.
+	 * 
+	 */
 	public void adicionaPedido(Pedido p) {
 		this.pedidos.add(p);
 
 	}
 
+	/**
+	 * Método para pesquisar pedidos com determinado produto.
+	 * 
+	 * @param codProduto O codigo do produto a ser pesquisado.
+	 * 
+	 * @return Retorna a lista com os pedidos que possuem o produto.
+	 * 
+	 */
 	public List<Pedido> pesquisaPedidosIncluindoProduto(String codProduto) {
 		List <Pedido> pedidosProcurados = new LinkedList<Pedido>();
 		for (Pedido p: this.pedidos){
@@ -58,6 +72,12 @@ public class ControleDePedidos implements InterfaceSistemaDeControle {
 		return pedidosProcurados;
 	}
 
+	/**
+	 * Método para remover um pedido.
+	 * 
+	 * @param numeroPedido O número do pedido a ser removido.
+	 * 
+	 */
 	public void removePedido(long numeroPedido) {
 		for (Pedido p: this.pedidos){
 			if (p.getNumeroPedido() == numeroPedido){
