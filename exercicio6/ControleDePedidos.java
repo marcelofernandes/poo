@@ -15,7 +15,7 @@ public class ControleDePedidos implements InterfaceSistemaDeControle{
 	private GravadorDePedidos gravador;
 
 	/**
-	 * Construtor padr�o que inicializa a lista.
+	 * Construtor padrão que inicializa a lista.
 	 * 
 	 */
 	public ControleDePedidos(){
@@ -37,6 +37,11 @@ public class ControleDePedidos implements InterfaceSistemaDeControle{
 		
 		
 	}
+	
+	/**
+	 * Método para carregar os pedidos do arquivo.
+	 * 
+	 */
 	private void carregaPedidos(){
 		try{
 			pedidos = gravador.lePedido();
@@ -65,9 +70,25 @@ public class ControleDePedidos implements InterfaceSistemaDeControle{
 		}
 		return qtd;
 	}
+	
+	/**
+	 * Método para adicionar um pedido.
+	 * 
+	 * @param p O pedido a ser adicionado.
+	 * 
+	 */
 	public void adicionaPedido(Pedido p){
 		this.pedidos.add(p);
 	}
+	
+	/**
+	 * Método para pesquisar pedidos que possuem determinado produto.
+	 * 
+	 * @param codProduto O codigo do produto a ser pesquisado.
+	 * 
+	 * @return a lista com os pediso que contem o produto.
+	 * 
+	 */
 	public List<Pedido> pesquisaPedidosIncuindoProduto(long codProduto){
 		List<Pedido> aux = new ArrayList<Pedido>();
 		for(Pedido p: this.pedidos){
@@ -80,6 +101,13 @@ public class ControleDePedidos implements InterfaceSistemaDeControle{
 		}
 		return aux;
 	}
+	
+	/**
+	 * Método para remover um pedido.
+	 * 
+	 * @param numPedido O número do pedido a ser removido.
+	 * 
+	 */
 	public void removePedido(long numPedido){
 		for(Pedido p: this.pedidos){
 			if(p.getNumeroDoPedido() == numPedido){
