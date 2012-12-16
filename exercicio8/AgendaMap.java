@@ -103,7 +103,7 @@ public class AgendaMap implements AgendaIF{
 	/**
 	 * Método para pegar todos os contatos.
 	 * 
-	 * @return Retorna uma lista com todos os contatos.
+	 * @return Retorna uma coleção com todos os contatos.
 	 * 
 	 */
 	public Collection<Contato> getContatos(){
@@ -115,7 +115,7 @@ public class AgendaMap implements AgendaIF{
 	/**
 	 * Método para pegar todos os contatos, mas só que ordendos.
 	 * 
-	 * @return retorna a lista com os contatos ordenados.
+	 * @return retorna um iterator com os contatos ordenados.
 	 * 
 	 */
 	public Iterator<Contato> getContatosOrdenados(){
