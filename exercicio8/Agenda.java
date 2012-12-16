@@ -112,7 +112,7 @@ public class Agenda implements AgendaIF{
 	}
 	
 	/**
-	 * Método para pegar todos so contatos.
+	 * Método para pegar todos os contatos.
 	 * 
 	 * @return Retorna uma lista com todos os contatos.
 	 * 
