@@ -76,7 +76,7 @@ public class Agenda implements AgendaIF{
 	/**
 	 * Método para remover um contato.
 	 * 
-	 * @param nomeContato O nome do contato a ser rtemovido.
+	 * @param nomeContato O nome do contato a ser removido.
 	 * 
 	 * @throws ContatoInexistenteException Exceção que será lançada caso o contato não exista.
 	 * 
