@@ -23,6 +23,10 @@ public class AgendaMap implements AgendaIF{
 		carregaContatos();
 	}
 
+	/**
+	 * Método para gravar os contatos no arquivo.
+	 * 
+	 */
 	private void gravaContatos(){
 		try{
 			gravador.gravaContatos(contatos);
@@ -33,6 +37,11 @@ public class AgendaMap implements AgendaIF{
 		
 		
 	}
+	
+	/**
+	 * Método para carregar os contator do arquivo.
+	 * 
+	 */
 	private void carregaContatos(){
 		try{
 			contatos = gravador.leContato();
@@ -43,12 +52,27 @@ public class AgendaMap implements AgendaIF{
 		}
 	}
 
+	/**
+	 * Método para adicionar um contato.
+	 * 
+	 * @param nome O nome do contato a ser adicionado.
+	 * 
+	 * @param tel O telefone do contato a ser adicionado.
+	 * 
+	 */
 	public void adicionarContato(String nome, String tel){
 		this.contatos.put(nome, new Contato(nome,tel) );
 		System.out.println("Contato "  + nome + " adicionado.");
 		gravaContatos();
 	}
 
+	/**
+	 * Método para remover um contato.
+	 * 
+	 * @param nomeContato O nome do contato a ser removido.
+	 * 
+	 * @throws ContatoInexistenteException exceção que será lançada caso o contato não exista.
+	 */
 	public void removerContato(String nomeContato)throws ContatoInexistenteException{
 		if( !(this.contatos.containsKey(nomeContato)) ){
 			throw new ContatoInexistenteException("Contato " + nomeContato + " nao encontrado.");
@@ -58,6 +82,14 @@ public class AgendaMap implements AgendaIF{
 		gravaContatos();
 	}
 
+	/**
+	 * Método para pesquisar um contato.
+	 * 
+	 * @param nomeContato O nome do contato a ser pesquisado.
+	 * 
+	 * @throws ContatoInexistenteException exceção que será lançada caso o contato não exista.
+	 * 
+	 */
 	public Contato pesquisarContato(String nomeContato)throws ContatoInexistenteException{
 		if( !(this.contatos.containsKey(nomeContato)) ){
 			throw new ContatoInexistenteException("Contato " + nomeContato +" nao cadastrado.");
@@ -65,12 +97,24 @@ public class AgendaMap implements AgendaIF{
 		return this.contatos.get(nomeContato);
 	}
 
+	/**
+	 * Método que pega todos os contatos.
+	 * 
+	 * @return Retorna uma coleção con todos os contatos.
+	 * 
+	 */
 	public Collection<Contato> getContatos(){
 		Collection<Contato> c = new ArrayList<Contato>();
 		c.addAll(this.contatos.values());
 		return c;
 	}
 
+	/**
+	 * Método que pega todos os contatos, só que ordenados.
+	 * 
+	 * @return Retorna um iterator com todos os contatos ordenados.
+	 * 
+	 */
 	public Iterator<Contato> getContatosOrdenados(){
 		List<Contato> c = new ArrayList<Contato>();
 		c.addAll(contatos.values());
