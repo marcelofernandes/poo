@@ -14,6 +14,10 @@ public class AgendaMap implements AgendaIF{
 	private Map<String, Contato> contatos;
 	private GravadorDeContatosMap gravador;
 
+	/**
+	 * Construtor padrão que inicializa as variáveis.
+	 * 
+	 */
 	public AgendaMap(){
 		gravador = new GravadorDeContatosMap();
 		carregaContatos();
