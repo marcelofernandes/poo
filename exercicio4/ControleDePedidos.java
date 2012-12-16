@@ -28,7 +28,7 @@ public class ControleDePedidos implements InterfaceSistemaDeControle {
 	 * @param NomeCliente Nome do cliente que 
 	 * queremos calcular a quantidade de pedidos
 	 * 
-	 * @return Retorna a quantidade de pedidos do cliente passado como par�metro.
+	 * @return Retorna a quantidade de pedidos do cliente passado como parâmetro.
 	 */
 	public int calculaQuantidadeDePedidosDoCliente(String nomeCliente){
 		int cont = 0;
