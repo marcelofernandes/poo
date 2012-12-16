@@ -3,7 +3,7 @@ package br.ufpb.sistemadeagenda;
 import java.util.*;
 
 /**
- * Interface com métodos para controle de contatos de uma agenda.
+ * Interface com mÃ©todos para controle de contatos de uma agenda.
  * 
  * @author Marcelo Fernandes.
  *
@@ -13,18 +13,18 @@ public interface AgendaIF{
 	/**
 	 * Adiciona um contato a lista de contatos.
 	 * 
-	 * @param nome É o nome do contato que será adicionado.
+	 * @param nome ï¿½ o nome do contato que serï¿½ adicionado.
 	 *
-	 * @param tel É o telefone do contato que será adicionado.
+	 * @param tel ï¿½ o telefone do contato que serï¿½ adicionado.
 	 */
 	public void adicionarContato(String nome, String tel);
 
 	/**
 	 * Remove um contato da lista de contatos.
 	 * 
-	 * @param nomeContato É o nome do contato que será removido.
+	 * @param nomeContato ï¿½ o nome do contato que serï¿½ removido.
 	 *
-	 * @throws ContatoInexistenteException Exceção caso o contato não exista.
+	 * @throws ContatoInexistenteException Exceï¿½ï¿½o caso o contato nï¿½o exista.
 	 */
 	public void removerContato(String nomeContato)throws ContatoInexistenteException;
 
@@ -35,7 +35,7 @@ public interface AgendaIF{
 	 * 
 	 * @return Retorna o contato pesquisado.
 	 *
-	 * @throws ContatoInexistenteException Exceção caso o contato não exista.
+	 * @throws ContatoInexistenteException Exceï¿½ï¿½o caso o contato nï¿½o exista.
 	 */
 	public Contato pesquisarContato(String nomeContato)throws ContatoInexistenteException;
 
