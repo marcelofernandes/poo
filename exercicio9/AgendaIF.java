@@ -42,7 +42,7 @@ public interface AgendaIF{
 	/**
 	 *  Metodo para pegar todos os contatos.
 	 * 
-	 * @return Retorna uma coleçao com todos os contatos.
+	 * @return Retorna uma coleção com todos os contatos.
 	 */
 	public Collection<Contato> getContatos();
 
